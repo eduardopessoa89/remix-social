@@ -56,12 +56,13 @@ export default function Index() {
   const { posts } = useLoaderData<LoaderData>()
   const formData = useActionData<ActionData>()
   return (
-    <div className="flex flex-col items-center">
+    <div className="p-8 flex flex-col items-center gap-8">
+      <h1 className="text-xl">Remix Social</h1>
       <PostForm
         error={formData?.error}
         fields={formData?.fields}
         action="/?index" />
-      <ul>
+      <ul className="flex flex-col gap-4">
         {
           posts.map((post) => (
             <li key={post.title}>
